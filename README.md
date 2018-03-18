@@ -2,7 +2,7 @@
 
 #### 1. Document processing and indexing. 
 
-You will be provided with a zip file that contains 63 HTML documents collected from Wikipedia.
+You will be provided with a zip file that contains 91 HTML documents collected from Wikipedia.
 
 - [ ] Pre-process the documents by removing all HTML tags and convert everything into lower case.
 
