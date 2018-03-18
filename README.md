@@ -45,4 +45,5 @@ Identify a domain of interest (e.g., Wikipedia, NFL, etc.). Ideally, the size of
 
 - [ ] Search personalization: use cookies to track users. Record each search and each click-through. For a new query, add a small component of the "search history" as query expansion.
 - [ ] Relevance feedback. For each query, allow the user to identify a set of "positive" and "negative" results. Use user feedback to update the query and return new (refined) results to the user.
-Please evaluate and compare the performance of the original search engine (step 4), and the new versions (step 5 and 6).
+
+#### 7. Please evaluate and compare the performance of the original search engine (step 4), and the new versions (step 5 and 6).
