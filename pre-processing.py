@@ -54,20 +54,25 @@ def stemmer(text):
 
 def main():
 
-    counter = 0
-    directory = os.listdir('pre-processing-files')
+	counter = 0
+	directory = os.listdir('pre-processing-files')
 
-    for file in directory:
-        open_file = open(file, 'r')
-        read_file = open_file.read()
+	for file in directory:
+		open_file = open("pre-processing-files/"+file, 'r', encoding="utf8")
+		read_file = open_file.read()
 
-        plain = removeTags(read_file)
-        lowerCase = toLowercase(plain)
-        filtered = filterStopWords(lowerCase)
-        stem = stemmer(filtered)
-        
-        counter += 1
-    print "Number of files ", counter
+		plain = removeTags(read_file)
+		lowerCase = toLowercase(plain)
+		filtered = filterStopWords(lowerCase)
+		stem = stemmer(filtered)
+		#Split the file to get filename and filetype
+		base = os.path.splitext(file)[0]
+		new_file = base + ".txt"
+		write_file = open("./cleaned_docs/"+new_file, 'w', encoding='utf-8')
+		write_file.write(" ".join(stem))# ---- to store the file as " " separated list
+		write_file.close()
+		counter += 1
+	print("Number of files ", counter)
 
 if __name__ == "__main__":
 	main()
