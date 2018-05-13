@@ -18,6 +18,8 @@ from nltk.corpus import stopwords
 import nltk
 
 import os
+if not os.path.exists(./cleaned_docs):
+    os.makedirs(./cleaned_docs)
 
 # Pre-process the documents by removing all HTML tags and convert everything
 # into lower case.
