@@ -7,6 +7,9 @@
 import urllib2
 import os
 
+# Queue to store to-be-crawled URLs.
+from Queue import Queue
+
 ###############################################
 # Folder that will store the crawled webpages #
 ###############################################
@@ -17,9 +20,6 @@ if not os.path.exists('linkedin-pre-processing'):
 ##########################################################
 # Multi-threaded spider that fetches and parses webpages #
 ##########################################################
-
-# Will only collect 1,000 webpges to be polite to the site.
-# for x in range(1000):
 
 # Download a webpage.
 response = urllib2.urlopen('https://business.linkedin.com/')
@@ -53,6 +53,11 @@ f.close()
 # URL frontier which stores to-be-crawled URLs #
 ################################################
 
+# Will only collect 1,000 webpges to be polite to the site.
+url_frontier = Queue(maxsize = 1000)
+
 ###########################################
 # URL repository that stores crawled URLs #
 ###########################################
+
+# This will be a set.
