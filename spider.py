@@ -19,3 +19,8 @@ class Spider:
 		Spider.crawled_file = './crawled.txt'
 		self.start()
 		self.crawl_page('first spider', Spider.base_url)
+
+	def start():
+		create_data_files(Spider.base_url)
+		Spider.queue = file_to_set(Spider.q_file)
+		Spider.crawled = file_to_set(Spider.crawled_file)
