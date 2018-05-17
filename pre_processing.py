@@ -18,8 +18,9 @@ from nltk.corpus import stopwords
 import nltk
 
 import os
-if not os.path.exists(./cleaned_docs):
-    os.makedirs(./cleaned_docs)
+
+if not os.path.exists('./cleaned_docs'):
+    os.makedirs('./cleaned_docs')
 
 # Pre-process the documents by removing all HTML tags and convert everything
 # into lower case.
@@ -57,10 +58,10 @@ def stemmer(text):
 def main():
 
 	counter = 0
-	directory = os.listdir('pre-processing-files')
+	directory = os.listdir('docsnew')
 
 	for file in directory:
-		open_file = open("pre-processing-files/"+file, 'r', encoding="utf8")
+		open_file = open("docsnew/"+file, 'r', encoding="utf8")
 		read_file = open_file.read()
 
 		plain = removeTags(read_file)
