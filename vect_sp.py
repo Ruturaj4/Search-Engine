@@ -53,13 +53,13 @@ euclidean_len = defaultdict(float)
 total_docs = len(all_docs)
 #print(total_docs)
 
-def main():
+def main(que):
 	#Initializing term length to frequency
 	term_len_to_freq()
 	#Initializing Euclidean length
 	euclidian_length()
 	#Get the query from the user
-	query()
+	query(que)
 
 def term_len_to_freq():
 	#Stores the frequency of each token in the global freq structure
@@ -100,53 +100,60 @@ def euclidian_length():
 		euclidean_len[x] = math.sqrt(length)
 
 #Now we'll pass the user query in our query() function to search the right term
-def query():
-	while(1):
-		search_query = input("Enter your query: ")
-		if search_query == "":
-			sys.exit()
-		
-		#while(search_query):
-		search_query = remove_tags(search_query)
-		search_query = list(filter(('p').__ne__, search_query))
-		print(search_query)
-		match = []
-		for term in search_query:
-			match.append(set(postings[term].keys()))
-		#Now removing set() from match
-		match = list(filter((set()).__ne__, match))
-		#print(match)
-		#Now intersecting the sub-matches
-		try:
-			re = reduce(set.intersection, [x for x in match])
-		except:
-			re = 0
-		print(re)
-		#removing set() from re
-		#re = list(filter((set()).__ne__, re))
-		scores = []
-		if not re:
-			print("DOcument not found")
-		else:
-			for id in re:
-				cosine_similarity = 0
-				for term in search_query:
-					if term in token_list:
-						cosine_similarity += inverse_freq(term)*weight(term,id)
-				#print(euclidean_len)
-				cosine_similarity /=euclidean_len[id]
-				#print(cosine_similarity)
-				scores.append([id, cosine_similarity])
-			scores = list(map(tuple, scores))
-			scores = sorted(scores, key=lambda tup: tup[1], reverse=True)
-			#print(scores)
-			#mapping the nested list into the list of tuples
-			#scores = sorted(scores, reverse=True)
-			#print(scores)
-			print("Score: filename")
-			for (x,rate) in scores:
-				print(str(rate)+": "+ all_docs[x])
-
+def query(que):
+	#search_query = input("Enter your query: ")
+	search_query = que
+	if search_query == "":
+		sys.exit()
+	
+	#while(search_query):
+	search_query = remove_tags(search_query)
+	search_query = list(filter(('p').__ne__, search_query))
+	print(search_query)
+	match = []
+	for term in search_query:
+		match.append(set(postings[term].keys()))
+	#Now removing set() from match
+	match = list(filter((set()).__ne__, match))
+	#print(match)
+	#Now intersecting the sub-matches
+	try:
+		re = reduce(set.intersection, [x for x in match])
+	except:
+		re = 0
+	#print(re)
+	#removing set() from re
+	#re = list(filter((set()).__ne__, re))
+	scores = []
+	if not re:
+		print("DOcument not found")
+	else:
+		for id in re:
+			cosine_similarity = 0
+			for term in search_query:
+				if term in token_list:
+					cosine_similarity += inverse_freq(term)*weight(term,id)
+			#print(euclidean_len)
+			cosine_similarity /=euclidean_len[id]
+			#print(cosine_similarity)
+			scores.append([id, cosine_similarity])
+		scores = list(map(tuple, scores))
+		scores = sorted(scores, key=lambda tup: tup[1], reverse=True)
+		#print(scores)
+		#mapping the nested list into the list of tuples
+		#scores = sorted(scores, reverse=True)
+		#print(scores)
+		print("Score: filename")
+		for (x,rate) in scores:
+			#print(str(rate)+": "+ all_docs[x])
+			get.append(str(score)+": "+ prac[x]+"/n")
+		print(get)
+		thefile = open('templates/results.html', 'w', encoding='utf-8')
+		html_body = '<body>'
+		thefile.write(html_body)
+		for item in get:
+			thefile.write("<p>%s</p>" % item)
+			thefile.write('</body>')
 
 
 

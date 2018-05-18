@@ -28,7 +28,7 @@ if not os.path.exists('linkedin-pre-processing'):
 ##########################################################
 
 # Download a webpage.
-seed_url = 'https://stackoverflow.com/'
+seed_url = 'https://ku.edu'
 #response = urllib.request.urlopen(seed_url)
 domain = get_name(seed_url)
 #html = response.read()
