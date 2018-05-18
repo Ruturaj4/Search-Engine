@@ -4,27 +4,20 @@
 
 You will be provided with a zip file that contains 91 HTML documents collected from Wikipedia.
 
-- [ ] Pre-process the documents by removing all HTML tags and convert everything into lower case.
-
-- [ ] Implement a stop list and a stemmer to pre-process the documents (for the stop list and stemmer, you are allowed to use third-party open source code).
-
-- [ ] Build an inverted index (including dictionary and posting lists) for the documents. Please make sure to keep all the frequency information.
+- [X] Pre-process the documents by removing all HTML tags and convert everything into lower case.
+- [X] Implement a stop list and a stemmer to pre-process the documents (for the stop list and stemmer, you are allowed to use third-party open source code).
+- [X] Build an inverted index (including dictionary and posting lists) for the documents. Please make sure to keep all the frequency information.
 
 #### 2. Vector Space model. 
 
 The goal is to provide a TF-IDF-based ranking for the documents.
 
-- [ ] Since you have already collected frequency information in step 1, please further compute IDF for each term.
-
-- [ ] For each document, calculate the length of the corresponding document vector.
-
-- [ ] For each incoming query, pre-process the query with the stop list and stemmer. Identify candidate documents that contain at least one query term.
-
-- [ ] Meanwhile, compute the length of the query vector.
-
-- [ ] Finally, compute the TF-IDF similarity score between the query and each candidate document (there is no need to construct the complete document vector, or loop through all dimensions in the vector space).
-
-- [ ] Sort the documents by the score.
+- [X] Since you have already collected frequency information in step 1, please further compute IDF for each term.
+- [X] For each document, calculate the length of the corresponding document vector.
+- [X] For each incoming query, pre-process the query with the stop list and stemmer. Identify candidate documents that contain at least one query term.
+- [X] Meanwhile, compute the length of the query vector.
+- [X] Finally, compute the TF-IDF similarity score between the query and each candidate document (there is no need to construct the complete document vector, or loop through all dimensions in the vector space).
+- [X] Sort the documents by the score.
 
 #### 3. Niche crawler. 
 
