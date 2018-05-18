@@ -1,6 +1,6 @@
 # LinkedIn-Search-Engine
 
-#### 1. Document processing and indexing. 
+#### 1. Document processing and indexing.
 
 You will be provided with a zip file that contains 91 HTML documents collected from Wikipedia.
 
@@ -8,7 +8,7 @@ You will be provided with a zip file that contains 91 HTML documents collected f
 - [X] Implement a stop list and a stemmer to pre-process the documents (for the stop list and stemmer, you are allowed to use third-party open source code).
 - [X] Build an inverted index (including dictionary and posting lists) for the documents. Please make sure to keep all the frequency information.
 
-#### 2. Vector Space model. 
+#### 2. Vector Space model.
 
 The goal is to provide a TF-IDF-based ranking for the documents.
 
@@ -19,9 +19,14 @@ The goal is to provide a TF-IDF-based ranking for the documents.
 - [X] Finally, compute the TF-IDF similarity score between the query and each candidate document (there is no need to construct the complete document vector, or loop through all dimensions in the vector space).
 - [X] Sort the documents by the score.
 
-#### 3. Niche crawler. 
+#### 3. Niche crawler.
 
-Identify a domain of interest (e.g., Wikipedia, NFL, etc.). Ideally, the size of the domain should be manageable, and the link structure is not too complicated to follow. The crawler should contain at least three components: (1) a multi-threaded spider that fetches and parses webpages, (2) the URL frontier which stores to-be-crawled URLs; and (3) the URL repository that stores crawled URLs. Please be polite to the site. Please collect a few hundreds to a few thousands of pages.
+- [X] Identify a domain of interest (e.g., Wikipedia, NFL, etc.). Ideally, the size of the domain should be manageable, and the link structure is not too complicated to follow.
+The crawler should contain at least three components:
+- [X] (1) a multi-threaded spider that fetches and parses webpages,
+- [X] (2) the URL frontier which stores to-be-crawled URLs; and
+- [ ] (3) the URL repository that stores crawled URLs.
+Please be polite to the site. Please collect a few hundreds to a few thousands of pages.
 
 #### 4. Web interface.
 - [ ] Feed the collected documents to the search engine that you implemented in step 2.
