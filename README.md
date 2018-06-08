@@ -1,4 +1,4 @@
-# LinkedIn-Search-Engine
+# Search-Engine
 
 #### 1. Document processing and indexing.
 
@@ -25,19 +25,19 @@ The goal is to provide a TF-IDF-based ranking for the documents.
 The crawler should contain at least three components:
 - [X] (1) a multi-threaded spider that fetches and parses webpages,
 - [X] (2) the URL frontier which stores to-be-crawled URLs; and
-- [ ] (3) the URL repository that stores crawled URLs.
+- [X] (3) the URL repository that stores crawled URLs.
 Please be polite to the site. Please collect a few hundreds to a few thousands of pages.
 
 #### 4. Web interface.
-- [ ] Feed the collected documents to the search engine that you implemented in step 2.
+- [X] Feed the collected documents to the search engine that you implemented in step 2.
 
-- [ ] Implement a Web-based interface to take user queries and return answers (document names, snapshot with search term(s) highlighted, and URL) to the user. You only need to provide a reasonable (not so fancy) interface, you can use WYSIWYG editors to generate HTML. Keep this version of your search engine, since it will be compared with two future versions.
+- [X] Implement a Web-based interface to take user queries and return answers (document names, snapshot with search term(s) highlighted, and URL) to the user. You only need to provide a reasonable (not so fancy) interface, you can use WYSIWYG editors to generate HTML. Keep this version of your search engine, since it will be compared with two future versions.
 
 #### 5. Add term proximity into your scoring mechanism.
 
-- [ ] Define your own score that reflects the proximity of search terms in each document.
+- [X] Define your own score that reflects the proximity of search terms in each document.
 
-- [ ] Define your own algorithm to integrate term proximity score with the tf-idf score from step 2.
+- [X] Define your own algorithm to integrate term proximity score with the tf-idf score from step 2.
 
 #### 6. Add one of the following to your search engine:
 
